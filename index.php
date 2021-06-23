@@ -5,7 +5,7 @@ include 'header.php';
     <h2>All Records</h2>
     <?php
         include "config.php";
-        $sql="Select * from student join class on student.sclass=class.cid";
+        $sql="SELECT * from student join class on student.sclass=class.cid order by sid ASC";
         $res=mysqli_query($conn,$sql) or die ("Query Unsuccessful");
         if(mysqli_num_rows($res)>0){
     ?>
@@ -27,7 +27,7 @@ include 'header.php';
                 <td><?php echo $row['cname']; ?></td>
                 <td><?php echo $row['sphone']; ?></td>
                 <td>
-                    <a href='edit.php'>Edit</a>
+                    <a href='edit.php?id=<?php echo $row['sid']; ?>'>Edit</a>
                     <a href='delete-inline.php'>Delete</a>
                 </td>
             </tr>
