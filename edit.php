@@ -24,7 +24,6 @@
           <label>Class</label>
         <?php
             include "config.php";
-            $id=$_GET['id'];
             $sql1="Select * from class";
             $res1=mysqli_query($conn,$sql1) or die ("Query Unsuccessful");
             if(mysqli_num_rows($res1)>0){
